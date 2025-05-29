@@ -1,0 +1,167 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 217.2 91.2% 29.8%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 59 130 246;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 37 99 235;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 29 78 216;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 29 78 216;
+    --sidebar-ring: 59 130 246;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 91.2% 39.8%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 30 58 138;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 59 130 246;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 37 99 235;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 37 99 235;
+    --sidebar-ring: 59 130 246;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* RTL Support */
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+  
+  [dir="rtl"] .ml-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+  }
+  
+  [dir="rtl"] .mr-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+}
+
+@layer components {
+  .rating-star {
+    @apply inline-block cursor-pointer transition-all duration-150;
+  }
+  
+  .rating-star.filled {
+    @apply text-amber-500;
+  }
+  
+  .rating-star.empty {
+    @apply text-gray-300;
+  }
+
+  .status-pending {
+    @apply bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100;
+  }
+  
+  .status-processing {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100;
+  }
+  
+  .status-shipped {
+    @apply bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100;
+  }
+  
+  .status-delivered {
+    @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100;
+  }
+  
+  .status-cancelled {
+    @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100;
+  }
+  
+  /* Additional responsive padding classes */
+  .p-responsive {
+    @apply p-2 sm:p-4 md:p-6;
+  }
+  
+  .py-responsive {
+    @apply py-2 sm:py-4 md:py-6;
+  }
+  
+  .px-responsive {
+    @apply px-2 sm:px-4 md:px-6;
+  }
+  
+  /* Enhance spacing in small screens */
+  .card-spacing {
+    @apply space-y-2 sm:space-y-4;
+  }
+  
+  /* Fix RTL alignment for buttons with icons */
+  .rtl-icon-button {
+    @apply flex flex-row-reverse items-center;
+  }
+}
